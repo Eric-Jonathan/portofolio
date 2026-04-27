@@ -38,6 +38,79 @@
 
         /* Smooth Scroll Padding for Anchors */
         section { scroll-margin-top: 80px; }
+
+        @keyframes border-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glass-card-active {
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card-active:hover {
+            border-color: transparent;
+        }
+
+        /* Efek garis bercahaya yang jalan melingkar */
+        .glass-card-active::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 24px; /* Sesuaikan rounded-3xl */
+            padding: 2px; /* Tebal border */
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
+            background-size: 200% auto;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .glass-card-active:hover::before {
+            opacity: 1;
+            animation: border-flow 3s linear infinite;
+        }
+
+        /* Menghilangkan scrollbar pada kontainer gambar */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Kontainer gambar dengan aspek rasio tetap */
+        #imageContainer {
+            aspect-ratio: 16 / 9;
+            background: #0f172a;
+        }
+
+        /* Pastikan carousel menempati ruang yang benar */
+        #carouselItems, .carousel-item {
+            height: 100%;
+            min-height: 300px;
+        }
+
+        #carouselItems .carousel-item img {
+            max-height: 100%;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+        }
+
+        @media (max-width: 768px) {
+            #projectModal .glass {
+                height: 90vh !important;
+                overflow-y: auto;
+            }
+            #projectModal .md\:w-1\/2 {
+                height: auto !important;
+            }
+        }
     </style>
 </head>
 <body class="text-slate-300 overflow-x-hidden">
@@ -127,7 +200,16 @@
             <h3 class="text-2xl md:text-3xl font-bold text-white mb-12 text-center" data-aos="fade-up">Project <span class="text-blue-500">Showcase</span></h3>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
-                <div class="glass p-8 rounded-3xl hover:translate-y-[-8px] transition-all duration-500 border-l-4 border-blue-500" data-aos="fade-up">
+                <div class="glass-card-active p-8 rounded-3xl hover:translate-y-[-8px] transition-all duration-500 cursor-pointer" 
+                    data-aos="fade-up"
+                    onclick="openModal(
+                        'Auto Generate Letter System', 
+                        'Sistem otomatisasi surat izin dosen untuk asisten kampus guna menggantikan proses manual yang lambat. Fitur utama meliputi template otomatis, tanda tangan digital, dan pengarsipan berbasis cloud.', 
+                        'Laravel, Bootstrap, MySQL', 
+                        'ISTTS', 
+                        ['Foto_Project/surat_tugas_1.jpg', 'Foto_Project/surat_tugas_2.jpg', 'Foto_Project/surat_tugas_3.jpg'], 
+                        'https://github.com/Eric-Jonathan/proyek-fai'
+                    )">
                     <div class="flex justify-between items-start mb-4">
                         <h4 class="text-lg font-bold text-white">Auto Generate Letter System</h4>
                         <span class="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-1 rounded">ISTTS</span>
@@ -139,7 +221,16 @@
                     </div>
                 </div>
 
-                <div class="glass p-8 rounded-3xl hover:translate-y-[-8px] transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                <div class="glass-card-active p-8 rounded-3xl hover:translate-y-[-8px] transition-all duration-500 cursor-pointer" 
+                    data-aos="fade-up" data-aos-delay="100"
+                    onclick="openModal(
+                        'Point of Sales System', 
+                        'Sistem POS (Point of Sales) profesional berskala industri yang mencakup manajemen inventaris, laporan penjualan real-time, dan integrasi pembayaran.', 
+                        'Laravel, jQuery, Bootstrap, MySQL', 
+                        'Molai.id', 
+                        ['Foto_Project/kaser_1.png', 'Foto_Project/kaser_2.png', 'Foto_Project/kaser_3.png', 'Foto_Project/kaser_4.png'], 
+                        'https://github.com/Eric-Jonathan/kaser.id'
+                    )">
                     <div class="flex justify-between items-start mb-4">
                         <h4 class="text-lg font-bold text-white">Point of Sales System</h4>
                         <span class="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Molai.id</span>
@@ -150,7 +241,16 @@
                     </div>
                 </div>
 
-                <div class="glass p-8 rounded-3xl hover:translate-y-[-8px] transition-all duration-500" data-aos="fade-up">
+                <div class="glass-card-active p-8 rounded-3xl hover:translate-y-[-8px] transition-all duration-500 cursor-pointer" 
+                    data-aos="fade-up"
+                    onclick="openModal(
+                        'Absence & Registration App', 
+                        'Aplikasi web yang dirancang khusus untuk mengelola daftar hadir dan registrasi kegiatan rohani di lingkungan kampus ISTTS secara digital.', 
+                        'Laravel, jQuery, Bootstrap, MySQL', 
+                        'Molai.id', 
+                        ['Foto_Project/retret_1.jpg', 'Foto_Project/retret_2.jpg', 'Foto_Project/retret_3.jpg'], 
+                        'https://github.com/Eric-Jonathan'
+                    )">
                     <div class="flex justify-between items-start mb-4">
                         <h4 class="text-lg font-bold text-white">Absence & Registration App</h4>
                         <span class="text-[10px] bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Community</span>
@@ -161,12 +261,21 @@
                     </div>
                 </div>
 
-                <div class="glass p-8 rounded-3xl hover:translate-y-[-8px] transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                <div class="glass-card-active p-8 rounded-3xl hover:translate-y-[-8px] transition-all duration-500 cursor-pointer" 
+                    data-aos="fade-up" data-aos-delay="100"
+                    onclick="openModal(
+                        'Inventory Management', 
+                        'Solusi manajemen stok barang untuk perusahaan kimia yang mengoptimalkan pencatatan barang dan juga produksi.', 
+                        'Laravel, jQuery, Bootstrap, MySQL', 
+                        'OKEJOB.id', 
+                        ['Foto_Project/pegasus_1.png', 'Foto_Project/pegasus_2.png', 'Foto_Project/pegasus_3.png', 'Foto_Project/pegasus_4.png', 'Foto_Project/pegasus_5.png'], 
+                        'https://github.com/Eric-Jonathan/pegasus'
+                    )">
                     <div class="flex justify-between items-start mb-4">
                         <h4 class="text-lg font-bold text-white">Inventory Management</h4>
-                        <span class="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-1 rounded">ISTTS</span>
+                        <span class="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-1 rounded">OKEJOB.ID</span>
                     </div>
-                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Aplikasi pengelola stok barang untuk optimalisasi inventaris toko kelontong.</p>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Aplikasi pengelola stok barang untuk optimalisasi inventaris gudang milik PT Pegasus Hikari Indonesia.</p>
                     <div class="flex gap-2 text-[10px] text-slate-500">
                         <span>#BusinessSys</span><span>#MySQL</span>
                     </div>
@@ -198,7 +307,8 @@
                     <span class="skill-badge px-4 py-2 rounded-xl text-blue-300 font-medium text-xs">Java</span>
                     <span class="skill-badge px-4 py-2 rounded-xl text-blue-300 font-medium text-xs">Python</span>
                     <span class="skill-badge px-4 py-2 rounded-xl text-blue-300 font-medium text-xs">MySQL</span>
-                    <span class="skill-badge px-4 py-2 rounded-xl text-blue-300 font-medium text-xs">Tailwind CSS</span>
+                    <span class="skill-badge px-4 py-2 rounded-xl text-blue-300 font-medium text-xs">Bootstrap</span>
+                    <span class="skill-badge px-4 py-2 rounded-xl text-blue-300 font-medium text-xs">JQuery</span>
                 </div>
             </div>
             
@@ -209,7 +319,8 @@
                 </h3>
                 
                 <div class="space-y-4">
-                    <div class="flex gap-5 items-center glass p-5 rounded-2xl border border-white/5 hover:border-orange-500/30 hover:bg-white/5 transition-all duration-300 group">
+                    <a href="https://www.credly.com/go/16C4UG1g" target="_blank"
+                        class="flex gap-5 items-center glass p-5 rounded-2xl border border-white/5 hover:border-orange-500/30 hover:bg-white/5 transition-all duration-300 group cursor-pointer">
                         <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-orange-500/10 text-orange-400 group-hover:scale-110 transition-transform">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19c.3 0 .5-.2.5-.5V10c0-3.9-3.1-7-7-7S4 6.1 4 10v8.5c0 .3.2.5.5.5h13z"/><path d="M7 10h10"/><path d="M12 10v9"/></svg>
                         </div>
@@ -217,9 +328,9 @@
                             <p class="text-white font-bold text-sm tracking-wide">AWS Academy Graduate</p>
                             <p class="text-[10px] text-orange-400/80 font-medium uppercase tracking-[1px] mt-1">Cloud Foundations</p>
                         </div>
-                    </div>
-
-                    <div class="flex gap-5 items-center glass p-5 rounded-2xl border border-white/5 hover:border-blue-500/30 hover:bg-white/5 transition-all duration-300 group">
+                    </a>
+                    <a href="https://www.credly.com/badges/08bbdb2f-20c2-4354-aa14-b579604e23b5/public_url" target="_blank"
+                        class="flex gap-5 items-center glass p-5 rounded-2xl border border-white/5 hover:border-blue-500/30 hover:bg-white/5 transition-all duration-300 group cursor-pointer">
                         <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 group-hover:scale-110 transition-transform">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 12h18"/><path d="M12 3v18"/></svg>
                         </div>
@@ -227,9 +338,9 @@
                             <p class="text-white font-bold text-sm tracking-wide">Microsoft 365 Certified</p>
                             <p class="text-[10px] text-blue-400/80 font-medium uppercase tracking-[1px] mt-1">Fundamentals</p>
                         </div>
-                    </div>
-
-                    <div class="flex gap-5 items-center glass p-5 rounded-2xl border border-white/5 hover:border-pink-500/30 hover:bg-white/5 transition-all duration-300 group">
+                    </a>
+                    <a href="https://www.credly.com/badges/036adb36-1a24-4ba2-961c-b914dad06a93/public_url" target="_blank"
+                        class="flex gap-5 items-center glass p-5 rounded-2xl border border-white/5 hover:border-pink-500/30 hover:bg-white/5 transition-all duration-300 group cursor-pointer">
                         <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-pink-500/10 text-pink-400 group-hover:scale-110 transition-transform">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M21 5c0 1.66-4 3-9 3s-9-1.34-9-3 4-3 9-3 9 1.34 9 3Z"/></svg>
                         </div>
@@ -237,9 +348,9 @@
                             <p class="text-white font-bold text-sm tracking-wide">Meta Certified</p>
                             <p class="text-[10px] text-pink-400/80 font-medium uppercase tracking-[1px] mt-1">Digital Marketing Associate</p>
                         </div>
-                    </div>
-
-                    <div class="flex gap-5 items-center glass p-5 rounded-2xl border border-white/5 hover:border-green-500/30 hover:bg-white/5 transition-all duration-300 group">
+                    </a>
+                    <a href="https://www.credly.com/badges/760e0e1a-1fdc-4554-ae77-d5527427ad91/public_url" target="_blank"
+                        class="flex gap-5 items-center glass p-5 rounded-2xl border border-white/5 hover:border-green-500/30 hover:bg-white/5 transition-all duration-300 group cursor-pointer">
                         <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-green-500/10 text-green-400 group-hover:scale-110 transition-transform">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
                         </div>
@@ -247,7 +358,7 @@
                             <p class="text-white font-bold text-sm tracking-wide">Google Cloud</p>
                             <p class="text-[10px] text-green-400/80 font-medium uppercase tracking-[1px] mt-1">Prompt Design in Vertex AI Skill</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -270,10 +381,58 @@
         </div>
     </section>
 
+    <div id="projectModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-[#020617]/95 backdrop-blur-md" onclick="closeModal()"></div>
+        <div class="glass border border-white/10 w-full max-w-5xl rounded-[28px] z-10 relative overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[85vh]">
+            <div class="w-full md:w-1/2 bg-black/40 flex items-center justify-center border-r border-white/10">
+                <div id="projectCarousel" class="carousel slide w-full h-full" data-bs-ride="carousel">
+                    <div class="carousel-inner h-full" id="carouselItems"></div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon bg-black/40 p-2 rounded-full"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon bg-black/40 p-2 rounded-full"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-between bg-gradient-to-b from-[#03081a] to-[#020617] overflow-y-auto">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <span id="modalTag" class="text-[10px] bg-blue-500/10 text-blue-400 border border-blue-500/20 px-3 py-1 rounded-full uppercase font-black tracking-widest"></span>
+                        <button onclick="closeModal()" class="text-slate-500 hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        </button>
+                    </div>
+
+                    <h3 id="modalTitle" class="text-2xl md:text-3xl font-bold text-white mb-4"></h3>
+                    
+                    <div class="space-y-6">
+                        <div class="group">
+                            <h4 class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2 group-hover:text-blue-400 transition-colors">Description</h4>
+                            <p id="modalDesc" class="text-slate-400 text-sm leading-relaxed"></p>
+                        </div>
+                        <div>
+                            <h4 class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2">Tech Stack</h4>
+                            <div id="modalTech" class="flex flex-wrap gap-2">
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10">
+                    <a id="githubBtn" href="#" target="_blank" class="w-full bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-xl text-sm font-semibold transition-all flex items-center justify-center gap-2 shadow-lg hover:scale-[1.02] active:scale-[0.98]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        <span>View Source Code</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
 
@@ -297,6 +456,67 @@
                     link.classList.add('active');
                 }
             });
+        });
+
+        function openModal(title, desc, tech, tag, images, githubLink) {
+            const modal = document.getElementById('projectModal');
+            
+            // Debugging: Cek di konsol apakah elemen ditemukan
+            if (!modal) {
+                console.error("Elemen dengan ID 'projectModal' tidak ditemukan!");
+                return;
+            }
+
+            const carouselInner = document.getElementById('carouselItems');
+            const techContainer = document.getElementById('modalTech');
+            
+            if (carouselInner) {
+                carouselInner.innerHTML = '';
+                images.forEach((src, index) => {
+                    carouselInner.innerHTML += `
+                        <div class="carousel-item ${index === 0 ? 'active' : ''} h-full">
+                            <img src="${src}" class="d-block w-full h-full object-contain p-6" alt="Slide ${index}">
+                        </div>`;
+                });
+            }
+
+            if (techContainer) {
+                techContainer.innerHTML = '';
+                tech.split(',').forEach(item => {
+                    techContainer.innerHTML += `<span class="px-3 py-1 bg-blue-500/5 border border-blue-500/10 rounded-lg text-blue-400 font-mono text-[10px]">${item.trim()}</span>`;
+                });
+            }
+
+            // Update Text & Links
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalTag').innerText = tag;
+            document.getElementById('githubBtn').href = githubLink;
+            
+            // Sekarang aman untuk memanggil classList
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fungsi navigasi Carousel
+        function moveCarousel(direction) {
+            const container = document.getElementById('imageContainer');
+            const scrollAmount = container.clientWidth;
+            container.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        // Menutup modal dengan tombol ESC
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
         });
     </script>
 </body>
