@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Jonathan Leman | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; }
+        
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gradient-text { background: linear-gradient(135deg, #60a5fa, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .skill-badge { background: rgba(96, 165, 250, 0.1); border: 1px solid rgba(96, 165, 250, 0.2); }
+        
+        /* Navbar Active State */
+        .nav-link.active { color: #3b82f6; position: relative; }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #3b82f6;
+            border-radius: 2px;
+        }
+
+        .profile-border {
+            position: relative;
+            padding: 4px;
+            background: linear-gradient(135deg, #60a5fa, #c084fc);
+            border-radius: 50%;
+        }
+
+        /* Smooth Scroll Padding for Anchors */
+        section { scroll-margin-top: 80px; }
+    </style>
+</head>
+<body class="text-slate-300 overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 glass py-4 px-6 md:px-20 flex justify-between items-center">
+        <h1 class="font-bold text-xl tracking-tighter text-white uppercase">Eric<span class="text-blue-500"> Jonathan</span></h1>
+        <div class="hidden md:flex space-x-8 text-sm font-medium">
+            <a href="#about" class="nav-link hover:text-blue-400 transition-all duration-300">About</a>
+            <a href="#experience" class="nav-link hover:text-blue-400 transition-all duration-300">Experience</a>
+            <a href="#projects" class="nav-link hover:text-blue-400 transition-all duration-300">Projects</a>
+            <a href="#skills" class="nav-link hover:text-blue-400 transition-all duration-300">Skills</a>
+        </div>
+    </nav>
+
+    <section id="about" class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative" style="padding-top: 100px;">
+        <div class="absolute w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full -top-20 -left-20 z-0"></div>
+        <div class="absolute w-[400px] h-[400px] bg-purple-600/10 blur-[120px] rounded-full bottom-0 right-0 z-0"></div>
+
+        <div data-aos="zoom-out" class="z-10 flex flex-col items-center">
+            <div class="profile-border mb-8 shadow-2xl shadow-blue-500/20">
+                <img src="profesional_self_potrait_2.png" alt="Eric Jonathan" class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-[#020617]">
+            </div>
+            
+            <h2 class="text-xs md:text-sm font-semibold text-blue-400 mb-4 tracking-[0.3em] uppercase">S-1 Sistem Informasi Bisnis</h2>
+            <h1 class="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight">Eric Jonathan Leman</h1>
+            <p class="max-w-2xl text-slate-400 text-base md:text-lg mx-auto leading-relaxed px-4">
+                Mahasiswa di <span class="text-white font-medium">Institut Sains dan Teknologi Terpadu Surabaya (ISTTS)</span>. 
+                Berfokus pada pengembangan sistem web dan otomasi solusi digital yang berorientasi pada kebutuhan bisnis.
+            </p>
+            <div class="mt-10 flex flex-col items-center gap-8">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#projects" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-blue-900/40 text-sm">
+                        View My Work
+                    </a>
+                    <a href="CV - Eric Jonathan.pdf" class="border border-slate-700 hover:bg-slate-800 text-white px-8 py-3 rounded-full font-bold transition text-sm flex items-center gap-2">
+                        <span>Download CV</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <a href="https://www.linkedin.com/in/eric-jonathan-leman-214aa42a9" target="_blank" class="text-slate-400 hover:text-blue-500 transition-all duration-300 transform hover:scale-125">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="https://github.com/Eric-Jonathan" target="_blank" class="text-slate-400 hover:text-white transition-all duration-300 transform hover:scale-125">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://wa.me/6285107030911" target="_blank" class="text-slate-400 hover:text-green-500 transition-all duration-300 transform hover:scale-125">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 px-6 md:px-20 max-w-5xl mx-auto relative z-10">
+        <div class="flex items-center gap-4 mb-12" data-aos="fade-right">
+            <h3 class="text-2xl md:text-3xl font-bold text-white">Work <span class="text-blue-500">Experience</span></h3>
+            <div class="h-[1px] flex-1 bg-slate-800"></div>
+        </div>
+
+        <div class="space-y-6">
+            <div class="glass p-8 rounded-3xl group hover:border-blue-500/50 transition-all duration-500" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row justify-between md:items-start gap-2">
+                    <div>
+                        <span class="text-blue-400 text-xs font-bold uppercase">Agt 2025 - Sekarang</span>
+                        <h4 class="text-xl font-bold text-white mt-1">Web Developer</h4>
+                        <p class="text-slate-400 text-sm">OKEJOB.id, Surabaya</p>
+                    </div>
+                </div>
+                <p class="mt-4 text-slate-400 text-sm leading-relaxed">Berkontribusi dalam tim development OKEJOB.id untuk membangun Management Inventory System bagi PT Pegasus Hikari Indonesia, guna mengoptimalkan pengelolaan dan pemantauan inventaris perusahaan secara terpusat.</p>
+            </div>
+
+            <div class="glass p-8 rounded-3xl group hover:border-blue-500/50 transition-all duration-500" data-aos="fade-up">
+                <div>
+                    <span class="text-blue-400 text-xs font-bold uppercase">Juli 2024 - Sekarang</span>
+                    <h4 class="text-xl font-bold text-white mt-1">Technical Support</h4>
+                    <p class="text-slate-400 text-sm">PT. Lumina Eka Optima, Tangerang</p>
+                </div>
+                <p class="mt-4 text-slate-400 text-sm leading-relaxed">Menerima dan menangani komplain teknikal seputar lisensi Microsoft, menganalisis permasalahan klien, serta memberikan solusi secara kolaboratif bersama tim PT. Lumina Eka Optima.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-[#03081a]">
+        <div class="px-6 md:px-20 max-w-6xl mx-auto">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-12 text-center" data-aos="fade-up">Project <span class="text-blue-500">Showcase</span></h3>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+                <div class="glass p-8 rounded-3xl hover:translate-y-[-8px] transition-all duration-500 border-l-4 border-blue-500" data-aos="fade-up">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-lg font-bold text-white">Auto Generate Letter System</h4>
+                        <span class="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-1 rounded">ISTTS</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Sistem otomatisasi surat izin dosen untuk asisten kampus guna menggantikan proses manual yang lambat.</p>
+                    <div class="flex gap-2">
+                        <span class="text-[10px] text-slate-500">#Automation</span>
+                        <span class="text-[10px] text-slate-500">#WebTool</span>
+                    </div>
+                </div>
+
+                <div class="glass p-8 rounded-3xl hover:translate-y-[-8px] transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-lg font-bold text-white">Point of Sales System</h4>
+                        <span class="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Molai.id</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Sistem POS profesional berskala industri untuk manajemen transaksi yang efisien.</p>
+                    <div class="flex gap-2 text-[10px] text-slate-500">
+                        <span>#Fintech</span><span>#Fullstack</span>
+                    </div>
+                </div>
+
+                <div class="glass p-8 rounded-3xl hover:translate-y-[-8px] transition-all duration-500" data-aos="fade-up">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-lg font-bold text-white">Absence & Registration App</h4>
+                        <span class="text-[10px] bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Community</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Web app untuk manajemen kehadiran kegiatan rohani di lingkungan kampus ISTTS.</p>
+                    <div class="flex gap-2 text-[10px] text-slate-500">
+                        <span>#Management</span><span>#Community</span>
+                    </div>
+                </div>
+
+                <div class="glass p-8 rounded-3xl hover:translate-y-[-8px] transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-lg font-bold text-white">Inventory Management</h4>
+                        <span class="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-1 rounded">ISTTS</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Aplikasi pengelola stok barang untuk optimalisasi inventaris toko kelontong.</p>
+                    <div class="flex gap-2 text-[10px] text-slate-500">
+                        <span>#BusinessSys</span><span>#MySQL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 flex justify-center" data-aos="fade-up">
+                <a href="https://github.com/Eric-Jonathan" target="_blank" 
+                class="group relative inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-2xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] overflow-hidden">
+                    
+                    <div class="absolute inset-0 w-1/2 h-full bg-white/10 skew-x-[-25deg] -translate-x-full group-hover:translate-x-[250%] transition-transform duration-700"></div>
+                    
+                    <span>View more of my work at GitHub</span>
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="transition-transform group-hover:scale-110">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24 px-6 md:px-20 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16">
+            <div data-aos="fade-right">
+                <h3 class="text-xl font-bold text-white mb-8">Technical <span class="text-blue-500">Skills</span></h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-badge px-4 py-2 rounded-xl text-blue-300 font-medium text-xs">Laravel</span>
+                    <span class="skill-badge px-4 py-2 rounded-xl text-blue-300 font-medium text-xs">React</span>
+                    <span class="skill-badge px-4 py-2 rounded-xl text-blue-300 font-medium text-xs">Java</span>
+                    <span class="skill-badge px-4 py-2 rounded-xl text-blue-300 font-medium text-xs">Python</span>
+                    <span class="skill-badge px-4 py-2 rounded-xl text-blue-300 font-medium text-xs">MySQL</span>
+                    <span class="skill-badge px-4 py-2 rounded-xl text-blue-300 font-medium text-xs">Tailwind CSS</span>
+                </div>
+            </div>
+            
+            <div data-aos="fade-left">
+                <h3 class="text-xl font-bold text-white mb-8 flex items-center gap-2">
+                    Certifications 
+                    <span class="h-[1px] w-12 bg-blue-500/50"></span>
+                </h3>
+                
+                <div class="space-y-4">
+                    <div class="flex gap-5 items-center glass p-5 rounded-2xl border border-white/5 hover:border-orange-500/30 hover:bg-white/5 transition-all duration-300 group">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-orange-500/10 text-orange-400 group-hover:scale-110 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19c.3 0 .5-.2.5-.5V10c0-3.9-3.1-7-7-7S4 6.1 4 10v8.5c0 .3.2.5.5.5h13z"/><path d="M7 10h10"/><path d="M12 10v9"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-white font-bold text-sm tracking-wide">AWS Academy Graduate</p>
+                            <p class="text-[10px] text-orange-400/80 font-medium uppercase tracking-[1px] mt-1">Cloud Foundations</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-5 items-center glass p-5 rounded-2xl border border-white/5 hover:border-blue-500/30 hover:bg-white/5 transition-all duration-300 group">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 group-hover:scale-110 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 12h18"/><path d="M12 3v18"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-white font-bold text-sm tracking-wide">Microsoft 365 Certified</p>
+                            <p class="text-[10px] text-blue-400/80 font-medium uppercase tracking-[1px] mt-1">Fundamentals</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-5 items-center glass p-5 rounded-2xl border border-white/5 hover:border-pink-500/30 hover:bg-white/5 transition-all duration-300 group">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-pink-500/10 text-pink-400 group-hover:scale-110 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M21 5c0 1.66-4 3-9 3s-9-1.34-9-3 4-3 9-3 9 1.34 9 3Z"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-white font-bold text-sm tracking-wide">Meta Certified</p>
+                            <p class="text-[10px] text-pink-400/80 font-medium uppercase tracking-[1px] mt-1">Digital Marketing Associate</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-5 items-center glass p-5 rounded-2xl border border-white/5 hover:border-green-500/30 hover:bg-white/5 transition-all duration-300 group">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-green-500/10 text-green-400 group-hover:scale-110 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-white font-bold text-sm tracking-wide">Google Cloud</p>
+                            <p class="text-[10px] text-green-400/80 font-medium uppercase tracking-[1px] mt-1">Prompt Design in Vertex AI Skill</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gradient-to-t from-blue-900/10 to-transparent">
+        <div class="px-6 md:px-20 text-center" data-aos="fade-up">
+            <h3 class="text-lg font-bold text-white mb-8 uppercase tracking-widest">Organization / Committee</h3>
+            <div class="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto mb-20">
+                <span class="glass px-4 py-2 rounded-full text-[10px] uppercase">Koord. Acara Ospek FT 2025</span>
+                <span class="glass px-4 py-2 rounded-full text-[10px] uppercase">Koord. HIGC 2024</span>
+                <span class="glass px-4 py-2 rounded-full text-[10px] uppercase">Volunteer ITLand 2023</span>
+                <span class="glass px-4 py-2 rounded-full text-[10px] uppercase">Anggota Ospek (Freshman Summit) 2024</span>
+                <span class="glass px-4 py-2 rounded-full text-[10px] uppercase">Koord. Acara Retreat PD ISTTS</span>
+            </div>
+            
+            <footer class="pt-8 border-t border-slate-800 text-[10px] text-slate-500 uppercase tracking-widest">
+                <p>© 2026 Eric Jonathan Leman | Portfolio</p>
+            </footer>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Logic for Active Navbar Links & Smooth Tracking
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
